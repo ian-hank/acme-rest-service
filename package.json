@@ -1,0 +1,28 @@
+{
+  "name": "gml-acme-rest-service",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ACME Corp RESTful API (Profiles)",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-hank/gml-acme-rest-service.git"
+  },
+  "author": "Ian Hank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian-hank/gml-acme-rest-service/issues"
+  },
+  "homepage": "https://github.com/ian-hank/gml-acme-rest-service#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.16"
+  }
+}
