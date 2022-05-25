@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose
-const { SchemaTypes } = mongoose
 
 //Schema and fields for an ACME Profile
 const profileSchema = new Schema({
 
     //Provided by front-end
     personaID: {
-        type: String
+        type: String,
+        required: false
     },
 
     firstName:{
@@ -21,27 +21,29 @@ const profileSchema = new Schema({
     },
 
     interests: {
-        tpye: [String],
+        type: [String],
         required: true
     },
 
     locLatitude: {
-        type: SchemaTypes.Double,
+        type: mongoose.Types.Decimal128,
         required: true
     },
 
     locLongitude: {
-        type: SchemaTypes.Double,
+        type: mongoose.Types.Decimal128,
         required: true
     },
 
     //Retrieved information from api.weather.gov
     city: {
-        type: String
+        type: String,
+        required: false
     },
 
     state: {
-        type: String
+        type: String,
+        required: false
     },
 
     currentTemp: {

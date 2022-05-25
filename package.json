@@ -19,7 +19,8 @@
   "homepage": "https://github.com/ian-hank/gml-acme-rest-service#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "mongoose": "^6.3.4"
+    "mongoose": "^6.3.4",
+    "node-fetch": "^3.2.4"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",

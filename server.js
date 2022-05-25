@@ -1,11 +1,12 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import 'dotenv/config'
+import profileRouter from './routes/profiles.js'
 
 //Constants
-const PORT_NUMBER = 5000                            //Port # for express server 
+const PORT_NUMBER = process.env.PORT_NUMBER       //Port # for express server 
 const MONGOOSE_URL = process.env.MONGOOSE_URL     //URL for localhost connection
-const DATABASE_NAME = process.env.DATABASE_NAME     //Name of the mongo database
+const DATABASE_NAME = process.env.DATABASE_NAME   //Name of the mongo database
 
 //Initialize Express App
 const app = express()
@@ -18,6 +19,7 @@ db.once('open', () => console.log('Connected to Database'))
 
 //Starting Express Server
 app.use(express.json())
+app.use('/api/profiles', profileRouter)
 app.listen(PORT_NUMBER, () => console.log(`Express server started on port ${PORT_NUMBER}`))
 
 //Providing server status
