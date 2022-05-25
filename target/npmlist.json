@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"gml-acme-rest-service","dependencies":{"express":{"version":"4.18.1"},"mongoose":{"version":"6.3.4"},"node-fetch":{"version":"3.2.4"},"nodemon":{"version":"2.0.16"}}}

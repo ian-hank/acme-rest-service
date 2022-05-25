@@ -1,0 +1,27 @@
+version: '4.8.2'
+
+services:
+  #MongoDB Service
+  mongo_db:
+    container_name: mongodb_container
+    image: mongo:latest
+    restart: always
+    ports: 
+      - 2717:27017
+    volumes:
+      - mongo_db:/data/db
+  
+  #Node API Service
+  api:
+    build: .
+    ports:
+      - 9000:5000
+    environment:
+      MONGOOSE_URL: mongodb://mongo_db/
+      DATABASE_NAME: ACMEProfiles
+      PORT_NUMBER: 5000
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}
