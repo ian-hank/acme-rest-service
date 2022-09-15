@@ -1,6 +1,6 @@
 # ACME Corporation REST Service
 
-A RESTful API to support ACME Corp in their endeavors to investigate counterfiet widget production and duplication. Below you can find the details for interacting with this API as well as the prerequisites for using this API.
+A demo RESTful API to support ACME Corp in their endeavors to investigate counterfiet widget production and duplication. Below you can find the details for interacting with this API as well as the prerequisites for using this API. The API is essentially just managing the creation of fake accounts to use for investigating the perps.
 
 ---
 
@@ -27,14 +27,14 @@ If you need to update `docker` on Windows or Mac, you can do so by using `docker
 
 ## Install
 
-    $ git clone https://github.com/ian-hank/gml-acme-rest-service
-    Cloning into 'gml-acme-rest-service'...
+    $ git clone https://github.com/ian-hank/acme-rest-service
+    Cloning into 'acme-rest-service'...
 
 ## Running the project
 
 Running the API is as simple as navigating to the recently cloned directory and issuing the `$ docker compose up` command.
 
-    $ cd gml-acme-rest-service
+    $ cd acme-rest-service
 
     $ docker compose up 
 
@@ -160,7 +160,7 @@ The calls available and expected responses for ACME Corp's profiles
 
 ---
 
-## GML Question & Answer
+## Question & Answer
 
 ### Were you able to complete all the functionality in the time allotted?  If not, which pieces are outstanding? 
 
