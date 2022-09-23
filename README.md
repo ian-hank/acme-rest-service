@@ -166,24 +166,21 @@ The calls available and expected responses for ACME Corp's profiles
 
 ### Were you able to complete all the functionality in the time allotted?  If not, which pieces are outstanding? 
 
-I was not able to complete the entire prompt as assigned within the time limit. I ran out of time beforing being able to fully implement the `node-fetch` calls to provide the weather data and location data based off of a profile's coordinates. I was beginning to work on it when I realized that I was going to run out of time to do the docker container and docker compose files. In the end I decided to prioritize getting those working as I felt they were much more crucial to the overall design.
-
-I also planned to come back to the Persona Id field and see how I wanted to tackle that as well. Depsite asking for clarification, I should have asked for even more clarification. I ended up not doing anything with it at all. It is implemented as a field, just not really being shown or used in the code.
+I was not able to complete the entire prompt as assigned within the time limit. I ran out of time beforing being able to fully implement the `node-fetch` calls to provide the weather data and location data based off of a profile's coordinates. I was beginning to work on it when I realized that I was going to run out of time to do the docker container and docker compose files. In the end I decided to prioritize getting the API docerized as I felt they were much more crucial to the overall design.
 
 ### What potential issues do you see with your API, as implemented?  How would you address them?
 
-Since my time was restricted there was certainly a fair amount of issues that I would have liked to implement. First, the error checking is pretty subpar. While it is implemented on every call, there is still plenty of ways to confuse the end user or person making calls on the API. I would have liked to provide detailed responses with status codes amongst other things if I had more time. I can't assume that everyone will be making calls with postman where these things are shown nicely.
+Since my time was restricted there was certainly a fair amount of issues that I would have liked to implement and adress. First, the error checking is pretty subpar. While it is implemented on every call, there is still plenty of ways to confuse the end user or person making calls on the API. I would have liked to provide detailed responses with status codes amongst other tidy-up things if I had more time. I can't assume that everyone will be making calls with postman where these things are shown nicely like I was using in development.
 
 Second, another one of the biggest issues is the lack of input validation. For example, a user could input coordinates that are entirely invalid and would never reach the weather api since there is no checks to ensure that the coordinates entered are actually valid. Having input validation ensures the integrity of data and provides more secure way from breaking the application.
-
 
 ### What security limitations does your API have?
 
 I would say the biggest security exposures in an API come from scripting attacks, ddos or request attacks, and packages. Below I will shortly go over each of these within the API and it's current limitations.
 
-Scripting attacks --> As stated above, no input validation is a pretty big security limitation existing within the API. This leaves the door pretty wide open to some sneaky XSS attacks. The API also does not have an expected API key (unless this is the persona id field to be implemented later). This allows anyone inlcuding those outside of acme corp to have access to the API if it turned into a public facing API.
+Scripting attacks --> As stated above, no input validation is a pretty big security limitation existing within the API. This leaves the door pretty wide open to some sneaky XSS attacks. The API also does not have an expected API key. This allows anyone inlcuding those outside of acme corp to have access to the API if it turned into a public facing API as the prompt had claimed.
 
 DDoS Attacks --> The API does not manage requests or has any sort of way/package to detect large volume requests which means it is most likely vulnerable to DDOS attacks and high-request attacks that can be used to take the API offline. Some sort of throttling based on client's requests would be helpful to prevent this.
 
-Package Security --> The API is simple enough that within the backend running `npm audit` provides 0 vulnerabilites to remediate from the packages we are using. I intentionally used the most recent stable version of Node and different packages to try to prevent vulnerabilites within the design. Another reason for using ES6 instead of CommonJS was this allowed the API to use `node-fetch 3.x.x` which is ONLY compatible with ES6 and higher. If I were to use CommonJS, `node-fetch` would have to be downgraded to 2.x.x which contains multiple known vulns.
+Package Security --> The API is simple enough that within the backend running `npm audit` provides 0 vulnerabilites to remediate from the packages I am using. I intentionally used the most recent stable version of Node and different packages to try to prevent vulnerabilites within the design. Another reason for using ES6 instead of CommonJS was this allowed the API to use `node-fetch 3.x.x` which is ONLY compatible with ES6 and higher. If I were to use CommonJS, `node-fetch` would have to be downgraded to 2.x.x which contains multiple known vulns.
 
