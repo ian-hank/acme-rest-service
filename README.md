@@ -1,5 +1,7 @@
 # ACME Corporation REST Service
 
+Time Limit: 3 hours(timed with a timer, all in one shot). All code in this repository was completed within the time limit and in one single go. This repository is not meant to be a guide or example of what a production ready RESTful API should look like. This repository was simply a test to see how far I could get within the time.
+
 A demo RESTful API to support ACME Corp in their endeavors to investigate counterfiet widget production and duplication. Below you can find the details for interacting with this API as well as the prerequisites for using this API. The API is essentially just managing the creation of fake accounts to use for investigating the perps.
 
 ---
